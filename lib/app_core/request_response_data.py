@@ -55,7 +55,7 @@ class ResponseData:
         self.traceback = traceback
 
     @property
-    def response(self):
+    def response(self) -> HTTPResponse:
         return HTTPResponse(
             body=orjson.dumps(
                 {"code": self.code,
@@ -66,7 +66,7 @@ class ResponseData:
             status=self.code,
             content_type="application/json",
         )
-    
+
 
 @dataclass
 class MetricData:
