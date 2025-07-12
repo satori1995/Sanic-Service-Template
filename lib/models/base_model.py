@@ -27,7 +27,7 @@ class BaseModel(BaseModelType):
         如果要基于主键获取记录，那么给 conditions 参数传入 {pk_name: pk_value} 即可
         当然此时除了主键还可以通过其它字段获取记录，并且同时支持多个字段，但只支持等值判断
 
-        :param session: 通过调用 async_sessionmaker[AsyncSession] 创建
+        :param session: 通过调用 AsyncSession 创建
         :param conditions: 查询条件，如果等值判断不满足要求，那么也可以手动构建查询条件
         :param fields: 要获取哪些字段
         :param count: 获取的记录条数，默认为 1，如果指定为 -1，表示获取所有满足条件的记录
