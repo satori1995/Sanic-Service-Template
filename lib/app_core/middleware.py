@@ -3,6 +3,7 @@
 """
 import time
 from sanic import Request, HTTPResponse
+from sanic_cors import CORS
 from lib.app_core import app
 from lib.app_core.global_context import global_context
 from lib.app_core.request_response_data import (
@@ -41,3 +42,10 @@ async def log_request(request: Request, response: HTTPResponse):
     metric_data.costs = costs
     # todo：记录请求信息
 
+
+CORS(
+    app,
+    origins=["*"],
+    methods=["*"],
+    allow_headers=["*"]
+)
